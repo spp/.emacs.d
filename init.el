@@ -139,6 +139,13 @@
 (setq auto-save-file-name-transforms
 			`((".*" ,temporary-file-directory t)))
 
+;; Ack
+(add-to-list 'load-path "~/.emacs.d/packages/full-ack")
+(autoload 'ack-same "full-ack" nil t)
+(autoload 'ack "full-ack" nil t)
+(autoload 'ack-find-same-file "full-ack" nil t)
+(autoload 'ack-find-file "full-ack" nil t)
+
 ;; Use cperl-mode instead of perl-mode
 (mapc (lambda (pair)
 		(if (eq (cdr pair) 'perl-mode)
