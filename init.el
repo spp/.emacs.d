@@ -1,12 +1,13 @@
 ;; Color theme
-;(require 'color-theme)
-;(color-theme-initialize)
+(add-to-list 'load-path "~/.emacs.d/color-theme/")
+(require 'color-theme)
+(color-theme-initialize)
 ;(color-theme-robin-hood)
-;(load-file "~/.emacs.d/color-themes/color-theme-tango.el")
-;(load-file "~/.emacs.d/color-themes/color-theme-blackboard.el")
-;(load-file "~/.emacs.d/color-themes/zenburn.el")
+;(load-file "~/.emacs.d/color-theme/themes/color-theme-tango.el")
+;(load-file "~/.emacs.d/color-theme/themes/color-theme-blackboard.el")
+(load-file "~/.emacs.d/color-theme/themes/zenburn.el")
 
-;(zenburn)
+(zenburn)
 
 ;(color-theme-tango)
 ;(color-theme-blackboard)
