@@ -120,7 +120,7 @@
 (setq js2-use-font-lock-faces t)
 
 ;; Textmate mode
-(add-to-list 'load-path "~/.emacs.d/textmate/")
+(add-to-list 'load-path "~/.emacs.d/packages/textmate/")
 (require 'textmate)
 (textmate-mode)
 
