@@ -1,0 +1,30 @@
+[submodule "packages/auto-complete"]
+	path = packages/auto-complete
+	url = git://github.com/emacsmirror/auto-complete.git
+[submodule "packages/full-ack"]
+	path = packages/full-ack
+	url = https://github.com/emacsmirror/full-ack.git
+[submodule "packages/rvm"]
+	path = packages/rvm
+	url = https://github.com/emacsmirror/rvm.git
+[submodule "packages/rhtml"]
+	path = packages/rhtml
+	url = https://github.com/eschulte/rhtml.git
+[submodule "packages/magit"]
+	path = packages/magit
+	url = https://github.com/emacsmirror/magit.git
+[submodule "packages/emacs-ide"]
+	path = packages/emacs-ide
+	url = https://github.com/emacsmirror/emacs-ide.git
+[submodule "packages/yasnippet"]
+	path = packages/yasnippet
+	url = https://github.com/rejeep/yasnippets.git
+[submodule "packages/yaml-mode"]
+	path = packages/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "packages/rspec-mode"]
+	path = packages/rspec-mode
+	url = https://github.com/pezra/rspec-mode.git
+[submodule "packages/js2-mode"]
+	path = packages/js2-mode
+	url = https://github.com/mooz/js2-mode.git

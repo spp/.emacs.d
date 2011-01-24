@@ -1,12 +1,12 @@
 ;; Color theme
-(require 'color-theme)
-(color-theme-initialize)
+;(require 'color-theme)
+;(color-theme-initialize)
 ;(color-theme-robin-hood)
 ;(load-file "~/.emacs.d/color-themes/color-theme-tango.el")
 ;(load-file "~/.emacs.d/color-themes/color-theme-blackboard.el")
-(load-file "~/.emacs.d/color-themes/zenburn.el")
+;(load-file "~/.emacs.d/color-themes/zenburn.el")
 
-(zenburn)
+;(zenburn)
 
 ;(color-theme-tango)
 ;(color-theme-blackboard)
@@ -45,10 +45,10 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
 ;; Configure SLIME
-(add-to-list 'load-path "~/.emacs.d/slime/")
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(require 'slime-autoloads)
-(slime-setup '(slime-scratch slime-editing-commands slime-repl slime-fuzzy slime-autodoc slime-banner slime-editing-commands slime-asdf slime-presentations slime-tramp slime-references slime-xref-browser slime-highlight-edits))
+;; (add-to-list 'load-path "~/.emacs.d/slime/")
+;; (setq inferior-lisp-program "/usr/bin/sbcl")
+;; (require 'slime-autoloads)
+;; (slime-setup '(slime-scratch slime-editing-commands slime-repl slime-fuzzy slime-autodoc slime-banner slime-editing-commands slime-asdf slime-presentations slime-tramp slime-references slime-xref-browser slime-highlight-edits))
 
 ;; Specify modes for Lisp file extensions so that we can turn on syntax highlighting for Lisp files with non-standard extensions
 (setq auto-mode-alist
@@ -88,7 +88,7 @@
 (global-set-key "\C-ck" 'mode-compile-kill)
 
 ;; rhtml mode
-(add-to-list 'load-path "~/.emacs.d/rhtml")
+(add-to-list 'load-path "~/.emacs.d/packages/rhtml")
 (require 'rhtml-mode)
 ; put rhtml templates into rhtml-mode
 (setq auto-mode-alist  (cons '("\\.erb$" . rhtml-mode) auto-mode-alist))
@@ -113,7 +113,7 @@
 (ido-mode t)
 
 ;; js2-mode
-(add-to-list 'load-path "~/.emacs.d/js2/")
+(add-to-list 'load-path "~/.emacs.d/packages/js2/")
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (setq js2-basic-offset 2)
@@ -177,14 +177,14 @@
 ;(fullscreen)
 
 ;; Start Maximized
-(defun x-maximize-frame ()
-  "Maximize the current frame (to full screen)"
-  (interactive)
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
+;; (defun x-maximize-frame ()
+;;   "Maximize the current frame (to full screen)"
+;;   (interactive)
+;;   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
+;;   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
 
-(defun maximize-frame ()
-  (x-maximize-frame))
+;; (defun maximize-frame ()
+;;   (x-maximize-frame))
 
-(if window-system
-    (add-hook 'window-setup-hook 'maximize-frame t))
+;; (if window-system
+;;     (add-hook 'window-setup-hook 'maximize-frame t))
