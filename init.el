@@ -119,9 +119,15 @@
 (setq js2-use-font-lock-faces t)
 
 ;; Textmate mode
-(add-to-list 'load-path "~/.emacs.d/packages/textmate/")
+(add-to-list 'load-path "~/.emacs.d/packages/textmate")
 (require 'textmate)
 (textmate-mode)
+
+;; Auto-complete
+(add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/dict")
+(ac-config-default)
 
 ;; For XML files, use nxml-mode instead of sgml-mode
 (add-to-list 'auto-mode-alist '("\\.xml\\'" . nxml-mode))
