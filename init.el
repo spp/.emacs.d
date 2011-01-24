@@ -39,10 +39,10 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
 ;; Configure SLIME
-;; (add-to-list 'load-path "~/.emacs.d/slime/")
-;; (setq inferior-lisp-program "/usr/bin/sbcl")
-;; (require 'slime-autoloads)
-;; (slime-setup '(slime-scratch slime-editing-commands slime-repl slime-fuzzy slime-autodoc slime-banner slime-editing-commands slime-asdf slime-presentations slime-tramp slime-references slime-xref-browser slime-highlight-edits))
+(add-to-list 'load-path "~/.emacs.d/packages/slime/")
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(require 'slime-autoloads)
+(slime-setup '(slime-scratch slime-editing-commands slime-repl slime-fuzzy slime-autodoc slime-banner slime-editing-commands slime-asdf slime-presentations slime-tramp slime-references slime-xref-browser slime-highlight-edits))
 
 ;; Specify modes for Lisp file extensions so that we can turn on syntax highlighting for Lisp files with non-standard extensions
 (setq auto-mode-alist
