@@ -111,6 +111,15 @@
 (require 'rvm)
 (rvm-use-default)
 
+;; YAML mode
+(add-to-list 'load-path "~/.emacs.d/packages/yaml-mode/")
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+(add-hook 'yaml-mode-hook
+		  '(lambda ()
+			 (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
 ;; js2-mode
 (add-to-list 'load-path "~/.emacs.d/packages/js2/")
 (autoload 'js2-mode "js2" nil t)
