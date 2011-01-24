@@ -2,15 +2,8 @@
 (add-to-list 'load-path "~/.emacs.d/color-theme/")
 (require 'color-theme)
 (color-theme-initialize)
-;(color-theme-robin-hood)
-;(load-file "~/.emacs.d/color-theme/themes/color-theme-tango.el")
-;(load-file "~/.emacs.d/color-theme/themes/color-theme-blackboard.el")
 (load-file "~/.emacs.d/color-theme/themes/zenburn.el")
-
 (zenburn)
-
-;(color-theme-tango)
-;(color-theme-blackboard)
 
 ;; I prefer tabs to be set at 4
 (setq default-tab-width 4)
@@ -113,6 +106,11 @@
 (require 'ido)
 (ido-mode t)
 
+;; RVM
+(add-to-list 'load-path "~/.emacs.d/packages/rvm/")
+(require 'rvm)
+(rvm-use-default)
+
 ;; js2-mode
 (add-to-list 'load-path "~/.emacs.d/packages/js2/")
 (autoload 'js2-mode "js2" nil t)
@@ -166,12 +164,26 @@
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(visible-bell t))
 
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#141312" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+;; (custom-set-faces
+;;   ;; custom-set-faces was added by Custom.
+;;   ;; If you edit it by hand, you could mess it up, so be careful.
+;;   ;; Your init file should contain only one such instance.
+;;   ;; If there is more than one, they won't work right.
+;;  '(default ((t (:inherit nil
+;; 				:stipple nil 
+;; 				:background "#ffffff" 
+;; 				:foreground "#141312" 
+;; 				:inverse-video nil 
+;; 				:box nil 
+;; 				:strike-through nil 
+;; 				:overline nil 
+;; 				:underline nil 
+;; 				:slant normal 
+;; 				:weight normal 
+;; 				:height 90 
+;; 				:width normal 
+;; 				:foundry "unknown" 
+;; 				:family "DejaVu Sans Mono")))))
 
 ;; Allow Emacs to switch to full-screen mode
 (add-to-list 'load-path "~/.emacs.d/")
