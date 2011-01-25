@@ -83,6 +83,11 @@
 			   (paredit-mode +1)))))
       '(emacs-lisp lisp inferior-lisp slime slime-repl repl))
 
+;; Use magit
+(add-to-list 'load-path "~/.emacs.d/packages/magit")
+(require 'magit)
+
+
 ;; Load up Tramp
 (require 'tramp)
 
