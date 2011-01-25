@@ -42,6 +42,10 @@
 	     (define-key lisp-mode-map [?\C-m] 'newline-and-indent)
 	     (define-key lisp-mode-map [?\C-j] 'newline)))
 
+(add-to-list 'load-path "~/.emacs.d/packages/ruby-electric")
+(require 'ruby-electric)
+(ruby-electric-mode t)
+
 ;; Ruby mode settings
 (add-hook 'ruby-mode-hook
 	  (lambda()
@@ -53,9 +57,7 @@
 	    (set (make-local-variable 'indent-tabs-mode) 'nil)
 	    (set (make-local-variable 'tab-width) 2)
 	    (imenu-add-to-menubar "IMENU")
-	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)
-	    (require 'ruby-electric)
-	    (ruby-electric-mode t)))
+	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)))
 
 ;; Install mode-compile to give friendlier compiling support!
 (add-to-list 'load-path "~/.emacs.d/packages/mode-compile")
