@@ -85,7 +85,7 @@
 (setq auto-mode-alist  (cons '("\\.rjs$" . ruby-mode) auto-mode-alist))
 
 ;; Paredit
-(add-to-list 'load-path "~/.emacs.d/paredit")
+(add-to-list 'load-path "~/.emacs.d/packages/paredit")
 (autoload 'paredit-mode "paredit" "Minor mode for pseudo-structurally editing Lisp code." t)
 (mapc (lambda (mode)
 	(let ((hook (intern (concat (symbol-name mode)
