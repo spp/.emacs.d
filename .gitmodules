@@ -16,8 +16,8 @@
 [submodule "packages/emacs-ide"]
 	path = packages/emacs-ide
 	url = https://github.com/emacsmirror/emacs-ide.git
-[submodule "packages/yasnippet"]
-	path = packages/yasnippet
+[submodule "packages/yasnippets"]
+	path = packages/yasnippets
 	url = https://github.com/rejeep/yasnippets.git
 [submodule "packages/yaml-mode"]
 	path = packages/yaml-mode
