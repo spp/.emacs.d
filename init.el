@@ -58,6 +58,9 @@
 	    (ruby-electric-mode t)))
 
 ;; Install mode-compile to give friendlier compiling support!
+(add-to-list 'load-path "~/.emacs.d/packages/mode-compile")
+(require 'mode-compile)
+(require 'mode-compile-kill)
 (autoload 'mode-compile "mode-compile"
   "Command to compile current buffer file based on the major mode" t)
 (global-set-key "\C-cc" 'mode-compile)
