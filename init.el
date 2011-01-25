@@ -65,6 +65,10 @@
   "Command to kill a compilation launched by `mode-compile'" t)
 (global-set-key "\C-ck" 'mode-compile-kill)
 
+;; Shoulda mode
+(add-to-list 'load-path "~/.emacs.d/packages/shoulda-mode")
+;(require 'shoulda-mode)
+
 ;; rhtml mode
 (add-to-list 'load-path "~/.emacs.d/packages/rhtml")
 (require 'rhtml-mode)
@@ -86,7 +90,6 @@
 ;; Use magit
 (add-to-list 'load-path "~/.emacs.d/packages/magit")
 (require 'magit)
-
 
 ;; Load up Tramp
 (require 'tramp)
