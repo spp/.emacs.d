@@ -52,3 +52,6 @@
 [submodule "packages/ruby-electric"]
 	path = packages/ruby-electric
 	url = https://github.com/emacsmirror/ruby-electric.git
+[submodule "packages/fullscreen"]
+	path = packages/fullscreen
+	url = https://github.com/emacsmirror/fullscreen.git

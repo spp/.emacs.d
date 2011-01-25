@@ -209,7 +209,7 @@
  '(visible-bell t))
 
 ;; Allow Emacs to switch to full-screen mode
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/packages/fullscreen")
 (require 'fullscreen)
 ;(fullscreen)
 
