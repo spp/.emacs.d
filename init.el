@@ -131,6 +131,13 @@
 (require 'textmate)
 (textmate-mode)
 
+;; Yasnippet mode
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/yasnippet/snippets")
+(yas/load-directory "~/.emacs.d/packages/yasnippets")
+
 ;; Auto-complete
 (add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
 (require 'auto-complete-config)
