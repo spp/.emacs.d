@@ -21,3 +21,19 @@ This list may not be exhaustive.
 
 You'll need to install ack (or ack-grep), exuberant-ctags and cscope for all the packages to work.
 
+TO DO:
+a) Emacs-IDE is a very neat idea. However it doesn't play well with IDO mode. The alternative is CEDET which is extremely moody. Either fix Emacs-IDE or get rid of it.
+
+b) Steal ruby-mode settings from the emacs-starter-kit.
+
+c) Store configuration settings for different machines separately.
+
+d) Emacs-Rails should be setup.
+
+e) Cucumber mode needs to be added.
+
+f) Rspec-mode and shoulda-mode should be made to work properly.
+
+g) Wire up Auto-complete and Yasnippet.
+
+h) Figure out how to get maximized setting working on Mac OS X.
