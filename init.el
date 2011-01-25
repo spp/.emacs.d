@@ -154,6 +154,10 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;; Android mode
+(add-to-list 'load-path "~/.emacs.d/packages/android-mode")
+(require 'android-mode)
+
 ;; Ack
 (add-to-list 'load-path "~/.emacs.d/packages/full-ack")
 (autoload 'ack-same "full-ack" nil t)
