@@ -1,12 +1,12 @@
 ;; Color theme
-(add-to-list 'load-path "~/.emacs.d/color-theme/")
+(add-to-list 'load-path "~/.emacs.d/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
 (load-file "~/.emacs.d/color-theme/themes/zenburn.el")
 (zenburn)
 
 ;; I prefer tabs to be set at 4
-(setq default-tab-width 4)
+(setq tab-width 4)
 
 ;; Use spaces for indentation (t)
 (setq indent-tabs-mode nil)
@@ -39,7 +39,7 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
 ;; Configure SLIME
-(add-to-list 'load-path "~/.emacs.d/packages/slime/")
+(add-to-list 'load-path "~/.emacs.d/packages/slime")
 (setq inferior-lisp-program "/usr/bin/sbcl")
 (require 'slime-autoloads)
 (slime-setup '(slime-scratch slime-editing-commands slime-repl slime-fuzzy slime-autodoc slime-banner slime-editing-commands slime-asdf slime-presentations slime-tramp slime-references slime-xref-browser slime-highlight-edits))
@@ -90,7 +90,7 @@
 (setq auto-mode-alist  (cons '("\\.rjs$" . ruby-mode) auto-mode-alist))
 
 ;; Paredit
-(add-to-list 'load-path "~/.emacs.d/paredit/")
+(add-to-list 'load-path "~/.emacs.d/paredit")
 (autoload 'paredit-mode "paredit" "Minor mode for pseudo-structurally editing Lisp code." t)
 (mapc (lambda (mode)
 		(let ((hook (intern (concat (symbol-name mode)
@@ -107,12 +107,12 @@
 (ido-mode t)
 
 ;; RVM
-(add-to-list 'load-path "~/.emacs.d/packages/rvm/")
+(add-to-list 'load-path "~/.emacs.d/packages/rvm")
 (require 'rvm)
 (rvm-use-default)
 
 ;; YAML mode
-(add-to-list 'load-path "~/.emacs.d/packages/yaml-mode/")
+(add-to-list 'load-path "~/.emacs.d/packages/yaml-mode")
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
@@ -121,7 +121,7 @@
 			 (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
 ;; js2-mode
-(add-to-list 'load-path "~/.emacs.d/packages/js2/")
+(add-to-list 'load-path "~/.emacs.d/packages/js2")
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (setq js2-basic-offset 2)
