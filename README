@@ -1,1 +1,21 @@
-This is my .emacs.d folder
+This is my .emacs.d folder. I've tried to keep consistent across machines running Debian Squeeze and Snow Leopard. Currently all the settings are dumped in init.el. 
+
+How is this different from emacs-starter-kit you ask? I tried customizing the emacs-starter-kit but I couldn't satisfactorily make that happen. Most of my frustrations revolved around ELPA and it's brittleness. Also, I wanted to churn out some Elisp code.
+
+To start using this, do the following:
+
+cd ~						# Go to your home folder	    
+rm .emacs					# Remove the .emacs file if it exists
+git clone https://github.com/habib/.emacs.d.git # Clone this repository
+cd .emacs.d					
+git submodule init				# Update the dependencies
+git submodule update 				# Wait patiently if you hail from a bandwidth starved nation
+
+The .gitmodules file will tell you that I most of the packages are from https://github.com/emacsmirror/ . That's an awesome resource and I thank the maintainers. 
+
+The themes are stored in the 'themes' folder. I prefer zenburn, ymmv. The packages are stored in the 'packages' folder. These may include:
+
+android-mode, auto-complete, color-theme, emacs-ide, full-ack, fullscreen, js2-mode, magit, mode-compile, paredit, rhtml, rspec-mode, ruby-electric, rvm, shoulda-mode, slime, textmate, yaml-mode, yasnippet and yasnippets.
+
+You'll need to install ack (or ack-grep), exuberant-ctags and cscope for all the packages to work.
+
