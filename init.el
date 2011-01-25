@@ -65,6 +65,13 @@
   "Command to kill a compilation launched by `mode-compile'" t)
 (global-set-key "\C-ck" 'mode-compile-kill)
 
+;;; FIX ME
+;;Rspec mode
+(add-to-list 'load-path "~/.emacs.d/packages/rspec-mode")
+;(require 'rspec-mode)
+;(setq rspec-use-rvm t)
+
+;;; FIX ME
 ;; Shoulda mode
 (add-to-list 'load-path "~/.emacs.d/packages/shoulda-mode")
 ;(require 'shoulda-mode)
