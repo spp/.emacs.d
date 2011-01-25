@@ -158,6 +158,13 @@
 (add-to-list 'load-path "~/.emacs.d/packages/android-mode")
 (require 'android-mode)
 
+;; Emacs IDE
+;; Requires ctags and cscope to be installed
+;; This mode doesn't gel well with IDo mode
+(add-to-list 'load-path "~/.emacs.d/packages/emacs-ide/src")
+;(require 'eide)
+;(eide-start)
+
 ;; Ack
 (add-to-list 'load-path "~/.emacs.d/packages/full-ack")
 (autoload 'ack-same "full-ack" nil t)
