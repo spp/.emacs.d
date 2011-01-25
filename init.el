@@ -11,22 +11,6 @@
 ;; Use spaces for indentation (t)
 (setq indent-tabs-mode nil)
 
-;; Whitespace mode is still too annoying
-; Make whitespace-mode use just basic coloring
-;(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
-
-;; Make whitespace-mode use "¶" for newline and "⇥" for tab.
-;; together with the rest of its defaults
-;(setq whitespace-display-mappings
-;  '((space-mark 32 [183] [46]) ; normal space
-;		(space-mark 160 [164] [95])
-;		(space-mark 2208 [2212] [95])
-;		(space-mark 2336 [2340] [95])
-;		(space-mark 3616 [3620] [95])
-;		(space-mark 3872 [3876] [95])
-;		(newline-mark 10 [182 10])
-;		(tab-mark 9 [8677 9] [92 9])))
-
 ;; Remove the toolbar
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
@@ -47,31 +31,31 @@
 ;; Specify modes for Lisp file extensions so that we can turn on syntax highlighting for Lisp files with non-standard extensions
 (setq auto-mode-alist
       (append '(("\.lisp$"   . lisp-mode)
-				("\.lsp$"    . lisp-mode)
-				("\.cl$"     . lisp-mode)
-				("\.asd$"    . lisp-mode)
-				("\.system$" . lisp-mode)) auto-mode-alist))
+		("\.lsp$"    . lisp-mode)
+		("\.cl$"     . lisp-mode)
+		("\.asd$"    . lisp-mode)
+		("\.system$" . lisp-mode)) auto-mode-alist))
 
 ;; Redefine Enter to be new-line and then enter for lisp mode
 (add-hook 'lisp-mode-hook
-		  '(lambda ()
-			 (define-key lisp-mode-map [?\C-m] 'newline-and-indent)
-			 (define-key lisp-mode-map [?\C-j] 'newline)))
+	  '(lambda ()
+	     (define-key lisp-mode-map [?\C-m] 'newline-and-indent)
+	     (define-key lisp-mode-map [?\C-j] 'newline)))
 
 ;; Ruby mode settings
 (add-hook 'ruby-mode-hook
-		  (lambda()
-			(add-hook 'local-write-file-hooks
-					  '(lambda()
-						 (save-excursion
-						   (untabify (point-min) (point-max))
-						   (delete-trailing-whitespace))))
-			(set (make-local-variable 'indent-tabs-mode) 'nil)
-			(set (make-local-variable 'tab-width) 2)
-			(imenu-add-to-menubar "IMENU")
-			(define-key ruby-mode-map "\C-m" 'newline-and-indent)
-			(require 'ruby-electric)
-			(ruby-electric-mode t)))
+	  (lambda()
+	    (add-hook 'local-write-file-hooks
+		      '(lambda()
+			 (save-excursion
+			   (untabify (point-min) (point-max))
+			   (delete-trailing-whitespace))))
+	    (set (make-local-variable 'indent-tabs-mode) 'nil)
+	    (set (make-local-variable 'tab-width) 2)
+	    (imenu-add-to-menubar "IMENU")
+	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)
+	    (require 'ruby-electric)
+	    (ruby-electric-mode t)))
 
 ;; Install mode-compile to give friendlier compiling support!
 (autoload 'mode-compile "mode-compile"
@@ -93,10 +77,10 @@
 (add-to-list 'load-path "~/.emacs.d/paredit")
 (autoload 'paredit-mode "paredit" "Minor mode for pseudo-structurally editing Lisp code." t)
 (mapc (lambda (mode)
-		(let ((hook (intern (concat (symbol-name mode)
-									"-mode-hook"))))
-		  (add-hook hook (lambda ()
-						   (paredit-mode +1)))))
+	(let ((hook (intern (concat (symbol-name mode)
+				    "-mode-hook"))))
+	  (add-hook hook (lambda ()
+			   (paredit-mode +1)))))
       '(emacs-lisp lisp inferior-lisp slime slime-repl repl))
 
 ;; Load up Tramp
@@ -117,8 +101,8 @@
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 (add-hook 'yaml-mode-hook
-		  '(lambda ()
-			 (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+	  '(lambda ()
+	     (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
 ;; js2-mode
 (add-to-list 'load-path "~/.emacs.d/packages/js2")
@@ -144,9 +128,9 @@
 ;; Temporary files aren't put in the same directory
 (setq make-backup-files nil)
 (setq backup-directory-alist
-			`((".*" . ,temporary-file-directory)))
+      `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
-			`((".*" ,temporary-file-directory t)))
+      `((".*" ,temporary-file-directory t)))
 
 ;; Ack
 (add-to-list 'load-path "~/.emacs.d/packages/full-ack")
@@ -186,32 +170,12 @@
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(visible-bell t))
 
-;; (custom-set-faces
-;;   ;; custom-set-faces was added by Custom.
-;;   ;; If you edit it by hand, you could mess it up, so be careful.
-;;   ;; Your init file should contain only one such instance.
-;;   ;; If there is more than one, they won't work right.
-;;  '(default ((t (:inherit nil
-;; 				:stipple nil 
-;; 				:background "#ffffff" 
-;; 				:foreground "#141312" 
-;; 				:inverse-video nil 
-;; 				:box nil 
-;; 				:strike-through nil 
-;; 				:overline nil 
-;; 				:underline nil 
-;; 				:slant normal 
-;; 				:weight normal 
-;; 				:height 90 
-;; 				:width normal 
-;; 				:foundry "unknown" 
-;; 				:family "DejaVu Sans Mono")))))
-
 ;; Allow Emacs to switch to full-screen mode
 (add-to-list 'load-path "~/.emacs.d/")
 (require 'fullscreen)
 ;(fullscreen)
 
+;; Doesn't work in Mac OS X. Alternative required.
 ;; Start Maximized
 ;; (defun x-maximize-frame ()
 ;;   "Maximize the current frame (to full screen)"
