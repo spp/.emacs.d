@@ -11,11 +11,13 @@ cd .emacs.d
 git submodule init				# Update the dependencies
 git submodule update 				# Wait patiently if you hail from a bandwidth starved nation
 
-The .gitmodules file will tell you that I most of the packages are from https://github.com/emacsmirror/ . That's an awesome resource and I thank the maintainers. 
+The .gitmodules file will tell you that most of the packages are from https://github.com/emacsmirror/ . That's an awesome resource and I thank the maintainers. 
 
-The themes are stored in the 'themes' folder. I prefer zenburn, ymmv. The packages are stored in the 'packages' folder. These may include:
+The themes are stored in the 'themes' folder. I prefer zenburn; choose your own and dump it there and modify the init.el file accordingly. All the packages are stored in the 'packages' folder. These may include:
 
 android-mode, auto-complete, color-theme, emacs-ide, full-ack, fullscreen, js2-mode, magit, mode-compile, paredit, rhtml, rspec-mode, ruby-electric, rvm, shoulda-mode, slime, textmate, yaml-mode, yasnippet and yasnippets.
+
+This list may not be exhaustive.
 
 You'll need to install ack (or ack-grep), exuberant-ctags and cscope for all the packages to work.
 
