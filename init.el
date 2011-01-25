@@ -1,8 +1,8 @@
 ;; Color theme
-(add-to-list 'load-path "~/.emacs.d/color-theme")
+(add-to-list 'load-path "~/.emacs.d/packages/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
-(load-file "~/.emacs.d/color-theme/themes/zenburn.el")
+(load-file "~/.emacs.d/themes/zenburn.el")
 (zenburn)
 
 ;; I prefer tabs to be set at 4

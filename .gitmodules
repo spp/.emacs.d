@@ -55,3 +55,6 @@
 [submodule "packages/fullscreen"]
 	path = packages/fullscreen
 	url = https://github.com/emacsmirror/fullscreen.git
+[submodule "packages/color-theme"]
+	path = packages/color-theme
+	url = https://github.com/emacsmirror/color-theme.git
