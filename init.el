@@ -1,5 +1,8 @@
+(mapc (lambda (dir)
+	(add-to-list 'load-path dir))
+      (directory-files "~/.emacs.d/packages/" 'full))
+
 ;; Color theme
-(add-to-list 'load-path "~/.emacs.d/packages/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
 (load-file "~/.emacs.d/themes/zenburn.el")
@@ -23,7 +26,6 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
 ;; Configure SLIME
-(add-to-list 'load-path "~/.emacs.d/packages/slime")
 (setq inferior-lisp-program "/usr/bin/sbcl")
 (require 'slime-autoloads)
 (slime-setup '(slime-scratch slime-editing-commands slime-repl slime-fuzzy slime-autodoc slime-banner slime-editing-commands slime-asdf slime-presentations slime-tramp slime-references slime-xref-browser slime-highlight-edits))
@@ -42,7 +44,6 @@
 	     (define-key lisp-mode-map [?\C-m] 'newline-and-indent)
 	     (define-key lisp-mode-map [?\C-j] 'newline)))
 
-(add-to-list 'load-path "~/.emacs.d/packages/ruby-electric")
 (require 'ruby-electric)
 (ruby-electric-mode t)
 
@@ -60,7 +61,6 @@
 	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)))
 
 ;; Install mode-compile to give friendlier compiling support!
-(add-to-list 'load-path "~/.emacs.d/packages/mode-compile")
 (require 'mode-compile)
 (require 'mode-compile-kill)
 (autoload 'mode-compile "mode-compile"
@@ -72,17 +72,14 @@
 
 ;;; FIX ME
 ;;Rspec mode
-(add-to-list 'load-path "~/.emacs.d/packages/rspec-mode")
 ;(require 'rspec-mode)
 ;(setq rspec-use-rvm t)
 
 ;;; FIX ME
 ;; Shoulda mode
-(add-to-list 'load-path "~/.emacs.d/packages/shoulda-mode")
 ;(require 'shoulda-mode)
 
 ;; rhtml mode
-(add-to-list 'load-path "~/.emacs.d/packages/rhtml")
 (require 'rhtml-mode)
 ; put rhtml templates into rhtml-mode
 (setq auto-mode-alist  (cons '("\\.erb$" . rhtml-mode) auto-mode-alist))
@@ -90,7 +87,6 @@
 (setq auto-mode-alist  (cons '("\\.rjs$" . ruby-mode) auto-mode-alist))
 
 ;; Paredit
-(add-to-list 'load-path "~/.emacs.d/packages/paredit")
 (autoload 'paredit-mode "paredit" "Minor mode for pseudo-structurally editing Lisp code." t)
 (mapc (lambda (mode)
 	(let ((hook (intern (concat (symbol-name mode)
@@ -100,7 +96,6 @@
       '(emacs-lisp lisp inferior-lisp slime slime-repl repl))
 
 ;; Use magit
-(add-to-list 'load-path "~/.emacs.d/packages/magit")
 (require 'magit)
 
 ;; Load up Tramp
@@ -111,12 +106,10 @@
 (ido-mode t)
 
 ;; RVM
-(add-to-list 'load-path "~/.emacs.d/packages/rvm")
 (require 'rvm)
 (rvm-use-default)
 
 ;; YAML mode
-(add-to-list 'load-path "~/.emacs.d/packages/yaml-mode")
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
@@ -125,26 +118,22 @@
 	     (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
 ;; js2-mode
-(add-to-list 'load-path "~/.emacs.d/packages/js2")
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (setq js2-basic-offset 2)
 (setq js2-use-font-lock-faces t)
 
 ;; Textmate mode
-(add-to-list 'load-path "~/.emacs.d/packages/textmate")
 (require 'textmate)
 (textmate-mode)
 
 ;; Yasnippet mode
-(add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/packages/yasnippet/snippets")
 (yas/load-directory "~/.emacs.d/packages/yasnippets")
 
 ;; Auto-complete
-(add-to-list 'load-path "~/.emacs.d/packages/auto-complete")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/auto-complete/dict")
 (ac-config-default)
@@ -160,18 +149,15 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; Android mode
-(add-to-list 'load-path "~/.emacs.d/packages/android-mode")
 (require 'android-mode)
 
 ;; Emacs IDE
 ;; Requires ctags and cscope to be installed
 ;; This mode doesn't gel well with IDo mode
-(add-to-list 'load-path "~/.emacs.d/packages/emacs-ide/src")
 ;(require 'eide)
 ;(eide-start)
 
 ;; Ack
-(add-to-list 'load-path "~/.emacs.d/packages/full-ack")
 (autoload 'ack-same "full-ack" nil t)
 (autoload 'ack "full-ack" nil t)
 (autoload 'ack-find-same-file "full-ack" nil t)
@@ -209,7 +195,6 @@
  '(visible-bell t))
 
 ;; Allow Emacs to switch to full-screen mode
-(add-to-list 'load-path "~/.emacs.d/packages/fullscreen")
 (require 'fullscreen)
 ;(fullscreen)
 
