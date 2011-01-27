@@ -45,4 +45,8 @@ f) Make rspec-mode and shoulda-mode work properly.
 
 g) Wire up Auto-complete and Yasnippet.
 
-h) Figure out how to get maximize window on startup on Mac OS X.
+h) Figure out how to maximize the window on startup on Mac OS X.
+
+i) Work towards a solution to maintain packages cleanly. ELPA is finicky and doesn't work well with the distributed model of package development. Many a times, I prefer an 'unofficial' .el file. 
+
+The user points to a git repo. The system will add that as a submodule, fetch it, store it in a proper location, compile the relevant files and then store the compiled .elcs in a folder out of git's purview. Yes, el-get does most of what I want and I am looking at modifying it. 
