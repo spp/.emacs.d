@@ -46,6 +46,9 @@
 ; put any rjs scripts into ruby-mode, as they are basically ruby
 (setq auto-mode-alist  (cons '("\\.rjs$" . ruby-mode) auto-mode-alist))
 
+;; RVM
+(require 'rvm)
+(rvm-use-default)
 
 ;; Haml mode
 (require 'haml-mode)
