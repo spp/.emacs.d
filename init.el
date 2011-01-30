@@ -170,5 +170,20 @@
 ;; (if window-system
 ;;     (add-hook 'window-setup-hook 'maximize-frame t))
 
+;; Move to the previous or next window
+;; Copied from http://nex-3.com/posts/45-efficient-window-switching-in-emacs
+(defun select-next-window ()
+  "Switch to the next window" 
+  (interactive)
+  (select-window (next-window)))
+
+(defun select-previous-window ()
+  "Switch to the previous window" 
+  (interactive)
+  (select-window (previous-window)))
+
+(global-set-key (kbd "M-<right>") 'select-next-window)
+(global-set-key (kbd "M-<left>")  'select-previous-window)
+
 ;; Load up Ruby and its related settings
 (require 'ruby-settings)

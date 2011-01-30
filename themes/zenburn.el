@@ -420,7 +420,7 @@ static char *gnus-pointer[] = {
 	'(fringe ((t (:inherit zenburn-highlight-subtle))))
 	'(header-line ((t (:inherit zenburn-highlight-damp
 			    :box (:color "#2e3330" :line-width 2)))))
-	'(mode-line ((t (:foreground "#acbc90" :background "#1e2320"
+	'(mode-line ((t (:foreground "#acbc90" :background "#001E0F"
 			  :box (:color "#1e2320" :line-width 2)))))
 	'(mode-line-inactive ((t (:background "#2e3330" :foreground "#88b090"
 				   :box (:color "#2e3330" :line-width 2)))))
