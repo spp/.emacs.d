@@ -58,3 +58,6 @@
 [submodule "packages/color-theme"]
 	path = packages/color-theme
 	url = https://github.com/emacsmirror/color-theme.git
+[submodule "packages/ruby-block"]
+	path = packages/ruby-block
+	url = https://github.com/adolfosousa/ruby-block.el.git
