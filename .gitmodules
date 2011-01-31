@@ -64,3 +64,9 @@
 [submodule "packages/haml-mode"]
 	path = packages/haml-mode
 	url = https://github.com/emacsmirror/haml-mode.git
+[submodule "packages/rainbow-mode"]
+	path = packages/rainbow-mode
+	url = https://github.com/emacsmirror/rainbow-mode.git
+[submodule "packages/sass-mode"]
+	path = packages/sass-mode
+	url = https://github.com/emacsmirror/sass-mode.git

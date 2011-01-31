@@ -70,12 +70,6 @@
 	  '(lambda ()
 	     (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
-;; js2-mode
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(setq js2-basic-offset 2)
-(setq js2-use-font-lock-faces t)
-
 ;; Textmate mode
 (require 'textmate)
 (textmate-mode)
@@ -180,5 +174,16 @@
 (global-set-key (kbd "M-<right>") 'select-next-window)
 (global-set-key (kbd "M-<left>")  'select-previous-window)
 
+;; rainbow mode - Highlights colors within a file, such as "#FF00FF"
+;; or "rgba(1,2,3,0.5)"
+(require 'rainbow-mode)
+
+;; Sass-mode
+(require 'sass-mode)
+(autoload 'sass-mode "sass-mode" nil t)
+
 ;; Load up Ruby and its related settings
 (require 'ruby-settings)
+
+;; Load up JavaScript settings
+(require 'javascript-settings)
