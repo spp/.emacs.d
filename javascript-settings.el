@@ -60,8 +60,6 @@
   (define-key js2-mode-map [(control d)] 'c-electric-delete-forward)
   (define-key js2-mode-map "{" 'paredit-open-curly)
   (define-key js2-mode-map "}" 'paredit-close-curly-and-newline)
-  (define-key js2-mode-map "(" 'paredit-open-round)
-  (define-key js2-mode-map ")" 'paredit-close-round)
   (define-key js2-mode-map "\"" 'paredit-doublequote)
   ;; fixes problem with pretty function font-lock
   (define-key js2-mode-map (kbd ",") 'self-insert-command)
@@ -73,5 +71,14 @@
 
 ;; Add the hook so this is all loaded when JS2-mode is loaded
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
+
+;; Moz-REPL
+(add-to-list 'load-path "~/.emacs.d/moz-repl")
+(autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
+
+(add-hook 'js2-mode-hook 'js2-custom-setup)
+(defun js2-custom-setup ()
+  (moz-minor-mode 1))
+
 
 (provide 'javascript-settings)

@@ -70,3 +70,6 @@
 [submodule "packages/sass-mode"]
 	path = packages/sass-mode
 	url = https://github.com/emacsmirror/sass-mode.git
+[submodule "packages/moz-repl"]
+	path = packages/moz-repl
+	url = https://github.com/bard/mozrepl.git
