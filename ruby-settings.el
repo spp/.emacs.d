@@ -33,6 +33,12 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
+(define-key ruby-mode-map "{" 'paredit-open-curly)
+(define-key ruby-mode-map "}" 'paredit-close-curly-and-newline)
+(define-key ruby-mode-map "\"" 'paredit-doublequote)
+
+(define-key ruby-mode-map "[" 'paredit-open-square)
+(define-key ruby-mode-map "]" 'paredit-close-square)
 ;; Ruby block mode
 (require 'ruby-block)
 (ruby-block-mode t)

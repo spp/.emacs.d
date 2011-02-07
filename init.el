@@ -51,7 +51,7 @@
 				    "-mode-hook"))))
 	  (add-hook hook (lambda ()
 			   (paredit-mode +1)))))
-      '(emacs-lisp lisp inferior-lisp slime slime-repl repl))
+      '(emacs-lisp lisp inferior-lisp slime slime-repl repl ruby))
 
 ;; Use magit
 (require 'magit)
