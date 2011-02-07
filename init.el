@@ -1,3 +1,7 @@
+;; When started as a GUI app on Mac OS X, Emacs doesn't pick up environment variables
+(add-to-list 'exec-path (getenv "PATH"))
+
+;; All the packages should be placed in sub-folders in the packages folder. Add them all.
 (mapc (lambda (dir)
 	(add-to-list 'load-path dir))
       (directory-files "~/.emacs.d/packages/" 'full))
@@ -11,7 +15,7 @@
 ;; I prefer tabs to be set at 4
 (setq tab-width 4)
 
-;; Use spaces for indentation (t)
+;; Use spaces for indentation
 (setq indent-tabs-mode nil)
 
 ;; Remove the toolbar
@@ -59,7 +63,7 @@
 ;; Load up Tramp
 (require 'tramp)
 
-;; Startup ido
+;; Startup IDo
 (require 'ido)
 (ido-mode t)
 
@@ -109,6 +113,12 @@
 (autoload 'ack "full-ack" nil t)
 (autoload 'ack-find-same-file "full-ack" nil t)
 (autoload 'ack-find-file "full-ack" nil t)
+;; In Debian, ack is installed as ack-grep
+(if (equal system-type 'gnu/linux)
+  (defcustom ack-executable (executable-find "ack-grep")
+    "*The location of the ack executable."
+    :group 'full-ack
+    :type 'file))
 
 ;; Use cperl-mode instead of perl-mode
 (mapc (lambda (pair)
