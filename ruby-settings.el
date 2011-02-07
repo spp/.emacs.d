@@ -56,4 +56,8 @@
 	  '(lambda ()
 	     (define-key haml-mode-map "\C-m" 'newline-and-indent)))
 
+;; Rinari mode
+(require 'rinari)
+(setq rinari-tags-file-name "TAGS")
+
 (provide 'ruby-settings)

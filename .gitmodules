@@ -73,3 +73,6 @@
 [submodule "packages/moz-repl"]
 	path = packages/moz-repl
 	url = https://github.com/bard/mozrepl.git
+[submodule "packages/rinari"]
+	path = packages/rinari
+	url = https://github.com/eschulte/rinari.git
