@@ -12,6 +12,9 @@
 	    (set (make-local-variable 'indent-tabs-mode) 'nil)
 	    (set (make-local-variable 'tab-width) 2)
 	    (imenu-add-to-menubar "IMENU")
+	    (setq ruby-deep-indent-paren nil)
+	    (setq c-tab-always-indent nil)
+	    (setq ruby-deep-arglist t)
 	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)))
 
 ;; Install mode-compile to give friendlier compiling support!

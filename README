@@ -16,37 +16,35 @@ git clone https://github.com/habib/.emacs.d.git # Clone this repository
 cd .emacs.d					
 git submodule init				# Update the dependencies
 git submodule update 				# Wait patiently if you hail from a bandwidth starved nation
+cd packages/rinari				# Goto the rinari mode
+git submodule init
+git submodule update				# Rinari mode has its own dependencies
 
 The .gitmodules file will tell you that most of the packages are from https://github.com/emacsmirror/ . That's an awesome resource and I thank the maintainers. 
 
 The themes are stored in the 'themes' folder. I prefer zenburn; choose your own and dump it there and modify the init.el file accordingly. All the packages are stored in the 'packages' folder. These may include:
 
-android-mode, auto-complete, color-theme, emacs-ide, full-ack, fullscreen, js2-mode, magit, mode-compile, paredit, rhtml, rspec-mode, ruby-electric, rvm, shoulda-mode, slime, textmate, yaml-mode, yasnippet and yasnippets.
-
-This list may not be exhaustive.
+android-mode, auto-complete, color-theme, emacs-ide, full-ack, fullscreen, js2-mode, magit, mode-compile, paredit, rhtml, rspec-mode, ruby-electric, rvm, shoulda-mode, slime, textmate, yaml-mode, yasnippet etc.
 
 WHAT ELSE?
 ----------
-You'll need to install ack (or ack-grep), exuberant-ctags and cscope for all the packages to work.
+You'll need to install ack (or ack-grep if in Debian), exuberant-ctags and cscope for all the packages to work.
 
 WHAT NEXT?
 ----------
 a) Emacs-IDE is a very neat idea. However it doesn't play well with IDO mode. The alternative is CEDET which is extremely moody. Either fix Emacs-IDE or get rid of it.
 
-b) Steal ruby-mode settings from the emacs-starter-kit.
+b) Steal ruby-mode settings from the emacs-starter-kit. PARTIALLY DONE.
 
 c) Store machine-specific settings separately.
 
-d) Setup emacs-rails.
+d) Make rspec-mode and shoulda-mode work properly.
 
-e) Setup Cucumber-mode.
+e) Wire up Auto-complete and Yasnippet.
 
-f) Make rspec-mode and shoulda-mode work properly.
+f) Figure out how to maximize the window on startup on Mac OS X.
 
-g) Wire up Auto-complete and Yasnippet.
+g) Work towards a solution to maintain packages cleanly. ELPA is finicky and doesn't work well with the distributed model of package development. Many a times, I prefer an 'unofficial' .el file. 
 
-h) Figure out how to maximize the window on startup on Mac OS X.
+The user points to a git repo. The system will add that as a submodule, fetch it, store it in a proper location, compile the relevant files and then store the compiled .elcs in a folder out of git's purview. Yes, el-get does most of what I want and I am looking at modifying it.
 
-i) Work towards a solution to maintain packages cleanly. ELPA is finicky and doesn't work well with the distributed model of package development. Many a times, I prefer an 'unofficial' .el file. 
-
-The user points to a git repo. The system will add that as a submodule, fetch it, store it in a proper location, compile the relevant files and then store the compiled .elcs in a folder out of git's purview. Yes, el-get does most of what I want and I am looking at modifying it. 

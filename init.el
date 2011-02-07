@@ -70,6 +70,7 @@
 ;; YAML mode
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 (add-hook 'yaml-mode-hook
 	  '(lambda ()
 	     (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
@@ -191,6 +192,12 @@
 ;; Sass-mode
 (require 'sass-mode)
 (autoload 'sass-mode "sass-mode" nil t)
+
+;; CSS mode
+(autoload 'css-mode "css-mode" nil t)
+(add-hook 'css-mode-hook '(lambda ()
+			    (setq css-indent-level 2)
+			    (setq css-indent-offset 2)))
 
 ;; Load up Ruby and its related settings
 (require 'ruby-settings)
