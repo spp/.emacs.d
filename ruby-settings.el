@@ -60,4 +60,11 @@
 (require 'rinari)
 (setq rinari-tags-file-name "TAGS")
 
+;; Cucumber feature
+;; language if .feature doesn't have "# language: fi"
+(setq feature-default-language "en")
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+(require 'feature-mode)
+(yas/load-directory "~/.emacs.d/packages/feature-mode/snippets")
+
 (provide 'ruby-settings)
