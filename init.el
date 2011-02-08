@@ -3,7 +3,7 @@
 ;; Mac Hack
 (push "/usr/local/bin" exec-path)
 
-;; All the packages should be placed in sub-folders in the packages folder. Add them all.
+;; All the packages should be placed under the packages folder. Add them all.
 (mapc (lambda (dir)
 	(add-to-list 'load-path dir))
       (directory-files "~/.emacs.d/packages/" 'full))
@@ -32,7 +32,7 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
 ;; Configure SLIME
-(setq inferior-lisp-program "/usr/bin/sbcl")
+(setq inferior-lisp-program (executable-find "sbcl"))
 (require 'slime-autoloads)
 (slime-setup '(slime-scratch slime-editing-commands slime-repl slime-fuzzy slime-autodoc slime-banner slime-editing-commands slime-asdf slime-presentations slime-tramp slime-references slime-xref-browser slime-highlight-edits))
 
@@ -49,15 +49,6 @@
 	  '(lambda ()
 	     (define-key lisp-mode-map [?\C-m] 'newline-and-indent)
 	     (define-key lisp-mode-map [?\C-j] 'newline)))
-
-;; Paredit
-(autoload 'paredit-mode "paredit" "Minor mode for pseudo-structurally editing Lisp code." t)
-(mapc (lambda (mode)
-	(let ((hook (intern (concat (symbol-name mode)
-				    "-mode-hook"))))
-	  (add-hook hook (lambda ()
-			   (paredit-mode +1)))))
-      '(emacs-lisp lisp inferior-lisp slime slime-repl repl ruby))
 
 ;; Use magit
 (require 'magit)
@@ -80,6 +71,22 @@
 ;; Textmate mode
 (require 'textmate)
 (textmate-mode)
+
+;; Modes in which Paredit should be active and Autopair shouldn't
+(setf modes-for-paredit '(emacs-lisp lisp inferior-lisp slime slime-repl repl))
+
+;; Autopair mode
+(require 'autopair)
+(autopair-global-mode)
+
+;; Paredit
+(autoload 'paredit-mode "paredit" "Minor mode for pseudo-structurally editing Lisp code." t)
+(mapc (lambda (mode)
+	(let ((hook (intern (concat (symbol-name mode)
+				    "-mode-hook"))))
+	  (add-hook hook (lambda () (setq autopair-dont-activate t)))
+	  (add-hook hook (lambda () (paredit-mode +1)))))
+      modes-for-paredit)
 
 ;; Yasnippet mode
 (require 'yasnippet)

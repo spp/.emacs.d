@@ -79,3 +79,6 @@
 [submodule "packages/feature-mode"]
 	path = packages/feature-mode
 	url = https://github.com/michaelklishin/cucumber.el.git
+[submodule "packages/autopair"]
+	path = packages/autopair
+	url = https://github.com/emacsmirror/autopair.git
