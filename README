@@ -1,10 +1,10 @@
 WHAT?
 -----
-This is my .emacs.d folder. I've tried to keep consistent across machines running Debian Squeeze and Snow Leopard. Currently all the settings are dumped in init.el. 
+This is my .emacs.d folder. I've tried to keep it consistent across machines running Debian Squeeze and Snow Leopard. 
 
 WHY?
 ----
-How is this different from emacs-starter-kit you ask? I tried customizing the emacs-starter-kit but I couldn't satisfactorily make that happen. Most of my frustrations revolved around ELPA and it's brittleness. Also, I wanted to churn out some Elisp code.
+How is this different from emacs-starter-kit you ask? I tried customizing the emacs-starter-kit but I couldn't satisfactorily make that happen. Most of my frustrations revolved around ELPA and it's brittleness. The archives don't contain a lot of packages. I've seen lots of packages that aren't maintained any more.  Others have created their own forks with lots more features. If I were to use a standard archive, I would still have to refer to these non-standard locations in order to get the packages I want. Also, I wanted to churn out some Elisp code and get a better understanding of how extensible Emacs really is.
 
 HOW?
 ----
@@ -22,9 +22,7 @@ git submodule update				# Rinari mode has its own dependencies
 
 The .gitmodules file will tell you that most of the packages are from https://github.com/emacsmirror/ . That's an awesome resource and I thank the maintainers. 
 
-The themes are stored in the 'themes' folder. I prefer zenburn; choose your own and dump it there and modify the init.el file accordingly. All the packages are stored in the 'packages' folder. These may include:
-
-android-mode, auto-complete, color-theme, emacs-ide, full-ack, fullscreen, js2-mode, magit, mode-compile, paredit, rhtml, rspec-mode, ruby-electric, rvm, shoulda-mode, slime, textmate, yaml-mode, yasnippet etc.
+The themes are stored in the 'themes' folder. I prefer zenburn; choose your own and dump it there and modify the init.el file accordingly. All the packages are stored in the 'packages' folder. The list keeps changing. See .gitmodules for an up-to-date listing.
 
 WHAT ELSE?
 ----------
@@ -32,19 +30,22 @@ You'll need to install ack (or ack-grep if in Debian), exuberant-ctags and cscop
 
 WHAT NEXT?
 ----------
-a) Emacs-IDE is a very neat idea. However it doesn't play well with IDO mode. The alternative is CEDET which is extremely moody. Either fix Emacs-IDE or get rid of it.
+a) Emacs-IDE is a neat idea. However it doesn't play well with IDO mode. The alternative is CEDET which is moody and clunky. Either fix Emacs-IDE or get rid of it.
 
-b) Steal ruby-mode settings from the emacs-starter-kit. PARTIALLY DONE.
+b) Steal ruby-mode settings from the emacs-starter-kit. <- PARTIALLY DONE.
 
 c) Store machine-specific settings separately.
 
 d) Make rspec-mode and shoulda-mode work properly.
 
-e) Wire up Auto-complete and Yasnippet.
+e) Wire up AutoComplete and Yasnippet. 
 
-f) Figure out how to maximize the window on startup on Mac OS X.
+f) Get RSense working.
 
-g) Work towards a solution to maintain packages cleanly. ELPA is finicky and doesn't work well with the distributed model of package development. Many a times, I prefer an 'unofficial' .el file. 
+g) Figure out how to maximize the window on startup on Mac OS X.
 
-The user points to a git repo. The system will add that as a submodule, fetch it, store it in a proper location, compile the relevant files and then store the compiled .elcs in a folder out of git's purview. Yes, el-get does most of what I want and I am looking at modifying it.
+h) Set up JavaScript lint checking with a Node.js server. Overkill? Yes. Absolutely awesome? You betcha!
+
+i) Work towards a solution for cleanly maintaining packages. The workflow can be as follows:
+The user points to a git repo which will added as a submodule, fetched and compiled. The compiled .elcs are stored out of git's purview. The user can also get packages via ELPA if so desired. Yes, el-get does most of what I want and I am looking at modifying it.
 
