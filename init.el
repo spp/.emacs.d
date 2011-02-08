@@ -102,6 +102,10 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+(auto-save-mode t)
+(auto-save-interval 30)
+(global-auto-revert-mode t)
+
 ;; Android mode
 (require 'android-mode)
 
