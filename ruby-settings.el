@@ -1,6 +1,16 @@
 (require 'ruby-electric)
 (ruby-electric-mode t)
 
+(defun ruby-interpolate ()
+  "In a double quoted string, interpolate."
+  (interactive)
+  (insert "#")
+  (when (and
+         (looking-back "\".*")
+         (looking-at ".*\""))
+    (insert "{}")
+    (backward-char 1)))
+
 ;; Ruby mode settings
 (add-hook 'ruby-mode-hook
 	  (lambda()
@@ -36,12 +46,6 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
-(define-key ruby-mode-map "{" 'paredit-open-curly)
-(define-key ruby-mode-map "}" 'paredit-close-curly-and-newline)
-(define-key ruby-mode-map "\"" 'paredit-doublequote)
-
-(define-key ruby-mode-map "[" 'paredit-open-square)
-(define-key ruby-mode-map "]" 'paredit-close-square)
 ;; Ruby block mode
 (require 'ruby-block)
 (ruby-block-mode t)
@@ -87,5 +91,9 @@
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 (require 'feature-mode)
 (yas/load-directory "~/.emacs.d/packages/feature-mode/snippets")
+
+(eval-after-load 'ruby-mode
+  '(progn
+     (define-key ruby-mode-map (kbd "#") 'ruby-interpolate)))
 
 (provide 'ruby-settings)
