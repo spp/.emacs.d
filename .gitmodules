@@ -6,7 +6,7 @@
 	url = https://github.com/emacsmirror/full-ack.git
 [submodule "packages/rvm"]
 	path = packages/rvm
-	url = https://github.com/emacsmirror/rvm.git
+	url = git@github.com:habib/rvm.el.git
 [submodule "packages/rhtml"]
 	path = packages/rhtml
 	url = https://github.com/eschulte/rhtml.git
@@ -49,9 +49,6 @@
 [submodule "packages/mode-compile"]
 	path = packages/mode-compile
 	url = https://github.com/emacsmirror/mode-compile.git
-[submodule "packages/ruby-electric"]
-	path = packages/ruby-electric
-	url = https://github.com/emacsmirror/ruby-electric.git
 [submodule "packages/fullscreen"]
 	path = packages/fullscreen
 	url = https://github.com/emacsmirror/fullscreen.git
