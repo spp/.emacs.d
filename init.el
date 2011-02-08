@@ -1,5 +1,7 @@
 ;; When started as a GUI app on Mac OS X, Emacs doesn't pick up environment variables
 (add-to-list 'exec-path (getenv "PATH"))
+;; Mac Hack
+(push "/usr/local/bin" exec-path)
 
 ;; All the packages should be placed in sub-folders in the packages folder. Add them all.
 (mapc (lambda (dir)
