@@ -80,12 +80,14 @@
 (require 'textmate)
 (textmate-mode)
 
-;; Modes in which Paredit should be active and Autopair shouldn't
-(setf modes-for-paredit '(emacs-lisp lisp inferior-lisp slime slime-repl repl))
-
 ;; Autopair mode
 (require 'autopair)
 (autopair-global-mode)
+; Ruby has ruby-electric mode that does the same thing
+(add-hook 'ruby-mode-hook (lambda () (setq autopair-dont-activate t)))
+
+;; Modes in which Paredit should be active and Autopair shouldn't
+(setf modes-for-paredit '(emacs-lisp lisp inferior-lisp slime slime-repl repl))
 
 ;; Paredit
 (autoload 'paredit-mode "paredit" "Minor mode for pseudo-structurally editing Lisp code." t)

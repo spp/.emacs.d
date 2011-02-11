@@ -2,10 +2,14 @@
 (require 'rvm)
 (rvm-use-default)
 
-(require 'ruby-style)
-(require 'inf-ruby)
-(require 'ruby-electric)
-(ruby-electric-mode t)
+;; Rake files are ruby, too, as are gemspecs, rackup files, etc.
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
 (defun ruby-interpolate ()
   "In a double quoted string, interpolate."
@@ -31,6 +35,11 @@
 	    (setq ruby-deep-indent-paren nil)
 	    (setq c-tab-always-indent nil)
 	    (setq ruby-deep-arglist t)
+	    (require 'ruby-style)
+	    (require 'ruby-electric)
+	    (ruby-electric-mode t)
+	    (require 'inf-ruby)
+	    (require 'ruby-compilation)
 	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)))
 
 ;; Install mode-compile to give friendlier compiling support!
@@ -42,15 +51,6 @@
 (autoload 'mode-compile-kill "mode-compile"
   "Command to kill a compilation launched by `mode-compile'" t)
 (global-set-key "\C-ck" 'mode-compile-kill)
-
-;; Rake files are ruby, too, as are gemspecs, rackup files, etc.
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
 ;; Ruby block mode
 (require 'ruby-block)
