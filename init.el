@@ -8,6 +8,10 @@
 	(add-to-list 'load-path dir))
       (directory-files "~/.emacs.d/packages/" 'full))
 
+;; Reliable way to maximize the window on startup
+(require 'maxframe)
+(add-hook 'window-setup-hook 'maximize-frame t)
+
 ;; Color theme
 (require 'color-theme)
 (color-theme-initialize)
@@ -177,10 +181,6 @@
 ;; Allow Emacs to switch to full-screen mode. Doesn't work on OSX yet.
 (require 'fullscreen)
 ;(fullscreen)
-
-;; Reliable way to maximize the window on startup
-(require 'maxframe)
-(add-hook 'window-setup-hook 'maximize-frame t)
 
 ;; Move to the previous or next window
 ;; Copied from http://nex-3.com/posts/45-efficient-window-switching-in-emacs

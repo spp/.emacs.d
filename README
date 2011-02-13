@@ -42,8 +42,6 @@ WHAT NEXT?
 
 * Wire up AutoComplete and Yasnippet. 
 
-* Figure out how to maximize the window on startup on Mac OS X.
-
 * Set up JavaScript lint checking with a Node.js server. Overkill? Yes. Absolutely awesome? You betcha!
 
 * Let RVM pick up the appropriate .el files when you switch Rubies. <- IN PROGRESS.
