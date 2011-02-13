@@ -22,30 +22,32 @@ git submodule update				# Rinari mode has its own dependencies
 
 The .gitmodules file will tell you that most of the packages are from https://github.com/emacsmirror/ . That's an awesome resource and I thank the maintainers. 
 
-The themes are stored in the 'themes' folder. I prefer zenburn; choose your own and dump it there and modify the init.el file accordingly. All the packages are stored in the 'packages' folder. The list keeps changing. See .gitmodules for an up-to-date listing.
+The themes are stored in the 'themes' folder. I prefer a slightly modified zenburn. Choose your own, put it in the themes folder and modify the init.el file accordingly. All the packages are stored in the 'packages' folder. The list keeps changing. See .gitmodules for an up-to-date listing.
 
 WHAT ELSE?
 ----------
-You'll need to install ack (or ack-grep if in Debian), exuberant-ctags and cscope for all the packages to work.
+You'll need to install ack (or ack-grep if in Debian), exuberant-ctags and cscope for all the packages to work. 
+
+If do Ruby development, you will love the RSense mode. Download the latest stable version (0.3 as of now) and extract the contents to your ~/opt folder. Follow this for more information: http://cx4a.org/software/rsense/
 
 WHAT NEXT?
 ----------
-a) Emacs-IDE is a neat idea. However it doesn't play well with IDO mode. The alternative is CEDET which is moody and clunky. Either fix Emacs-IDE or get rid of it.
+* Emacs-IDE is a neat idea. However it doesn't play well with IDO mode. The alternative is CEDET which is moody and clunky. Either fix Emacs-IDE or get rid of it.
 
-b) Steal ruby-mode settings from the emacs-starter-kit. <- PARTIALLY DONE.
+* Steal ruby-mode settings from the emacs-starter-kit. <- PARTIALLY DONE.
 
-c) Store machine-specific settings separately.
+* Store machine-specific settings separately.
 
-d) Make rspec-mode and shoulda-mode work properly.
+* Make rspec-mode and shoulda-mode work properly.
 
-e) Wire up AutoComplete and Yasnippet. 
+* Wire up AutoComplete and Yasnippet. 
 
-f) Get RSense working.
+* Figure out how to maximize the window on startup on Mac OS X.
 
-g) Figure out how to maximize the window on startup on Mac OS X.
+* Set up JavaScript lint checking with a Node.js server. Overkill? Yes. Absolutely awesome? You betcha!
 
-h) Set up JavaScript lint checking with a Node.js server. Overkill? Yes. Absolutely awesome? You betcha!
+* Let RVM pick up the appropriate .el files when you switch Rubies. <- IN PROGRESS.
 
-i) Work towards a solution for cleanly maintaining packages. The workflow can be as follows:
+* Work towards a solution for cleanly maintaining packages. The workflow can be as follows:
 The user points to a git repo which will added as a submodule, fetched and compiled. The compiled .elcs are stored out of git's purview. The user can also get packages via ELPA if so desired. Yes, el-get does most of what I want and I am looking at modifying it.
 
