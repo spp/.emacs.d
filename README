@@ -4,7 +4,7 @@ This is my .emacs.d folder. I've tried to keep it consistent across machines run
 
 WHY?
 ----
-How is this different from emacs-starter-kit you ask? I tried customizing the emacs-starter-kit but I couldn't satisfactorily make that happen. Most of my frustrations revolved around ELPA and it's brittleness. The archives don't contain a lot of packages. I've seen lots of packages that aren't maintained any more.  Others have created their own forks with lots more features. If I were to use a standard archive, I would still have to refer to these non-standard locations in order to get the packages I want. Also, I wanted to churn out some Elisp code and get a better understanding of how extensible Emacs really is.
+How is this different from emacs-starter-kit you ask? I tried customizing the emacs-starter-kit but I couldn't satisfactorily make that happen. Most of my frustrations revolved around ELPA. It is brittle and the archives don't contain a whole lot of packages. Many of these packages aren't being actively maintained any more. Good folks have created their own forks and updated them with lots more features. If I were to use a standard archive, I would still have to refer to these non-standard locations in order to get the packages I want. Also, I wanted to churn out some Elisp code and get a better understanding of how extensible Emacs really is.
 
 HOW?
 ----
@@ -16,19 +16,19 @@ git clone https://github.com/habib/.emacs.d.git # Clone this repository
 cd .emacs.d					
 git submodule init				# Update the dependencies
 git submodule update 				# Wait patiently if you hail from a bandwidth starved nation
-cd packages/rinari				# Goto the rinari mode
+cd packages/rinari				# Goto the rinari mode folder
 git submodule init
 git submodule update				# Rinari mode has its own dependencies
 
 The .gitmodules file will tell you that most of the packages are from https://github.com/emacsmirror/ . That's an awesome resource and I thank the maintainers. 
 
-The themes are stored in the 'themes' folder. I prefer a slightly modified zenburn. Choose your own, put it in the themes folder and modify the init.el file accordingly. All the packages are stored in the 'packages' folder. The list keeps changing. See .gitmodules for an up-to-date listing.
+The themes are stored in the 'themes' folder. I prefer a slightly modified zenburn thats packaged with this. If you prefer another theme, put it in the themes folder and modify the init.el file accordingly. All the packages are stored in the 'packages' folder. The list keeps changing. See .gitmodules for an up-to-date listing.
 
 WHAT ELSE?
 ----------
-You'll need to install ack (or ack-grep if in Debian), exuberant-ctags and cscope for all the packages to work. 
+You'll need to install ack (or ack-grep in Debian), exuberant-ctags and cscope for all the packages to work. 
 
-If do Ruby development, you will love the RSense mode. Download the latest stable version (0.3 as of now) and extract the contents to your ~/opt folder. Follow this for more information: http://cx4a.org/software/rsense/
+If you write Ruby code, you will love RSense mode. Extract the contents of the latest stable version (0.3 as of now) to your ~/opt folder. Follow this for more information: http://cx4a.org/software/rsense/
 
 WHAT NEXT?
 ----------
@@ -47,5 +47,4 @@ WHAT NEXT?
 * Let RVM pick up the appropriate .el files when you switch Rubies. <- IN PROGRESS.
 
 * Work towards a solution for cleanly maintaining packages. The workflow can be as follows:
-The user points to a git repo which will added as a submodule, fetched and compiled. The compiled .elcs are stored out of git's purview. The user can also get packages via ELPA if so desired. Yes, el-get does most of what I want and I am looking at modifying it.
-
+The user points to a git repo which will added as a submodule, fetched and compiled. The compiled .elcs are stored out of git's purview. The user can also get packages via ELPA if so desired. el-get does most of what I want and I am looking forward to using it.
