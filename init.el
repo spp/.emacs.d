@@ -174,23 +174,13 @@
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(visible-bell t))
 
-;; Allow Emacs to switch to full-screen mode
+;; Allow Emacs to switch to full-screen mode. Doesn't work on OSX yet.
 (require 'fullscreen)
 ;(fullscreen)
 
-;; Doesn't work in Mac OS X. Alternative required.
-;; Start Maximized
-;; (defun x-maximize-frame ()
-;;   "Maximize the current frame (to full screen)"
-;;   (interactive)
-;;   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-;;   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
-
-;; (defun maximize-frame ()
-;;   (x-maximize-frame))
-
-;; (if window-system
-;;     (add-hook 'window-setup-hook 'maximize-frame t))
+;; Reliable way to maximize the window on startup
+(require 'maxframe)
+(add-hook 'window-setup-hook 'maximize-frame t)
 
 ;; Move to the previous or next window
 ;; Copied from http://nex-3.com/posts/45-efficient-window-switching-in-emacs
