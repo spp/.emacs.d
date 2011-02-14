@@ -82,3 +82,6 @@
 [submodule "packages/maxframe"]
 	path = packages/maxframe
 	url = https://github.com/rmm5t/maxframe.el.git
+[submodule "packages/ruby-electric"]
+	path = packages/ruby-electric
+	url = https://github.com/emacsmirror/ruby-electric.git

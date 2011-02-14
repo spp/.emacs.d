@@ -35,7 +35,7 @@
 	    (setq ruby-deep-indent-paren nil)
 	    (setq c-tab-always-indent nil)
 	    (setq ruby-deep-arglist t)
-	    (require 'ruby-style)
+	    ;(require 'ruby-style)
 	    (require 'ruby-electric)
 	    (ruby-electric-mode t)
 	    (require 'inf-ruby)
