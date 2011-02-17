@@ -38,6 +38,11 @@
 	    ;(require 'ruby-style)
 	    (require 'ruby-electric)
 	    (ruby-electric-mode t)
+	    ;; Ruby block mode
+	    (require 'ruby-block)
+	    (ruby-block-mode t)
+	    ;; display to minibuffer and do overlay
+	    (setq ruby-block-highlight-toggle t)
 	    (require 'inf-ruby)
 	    (require 'ruby-compilation)
 	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)))
@@ -51,12 +56,6 @@
 (autoload 'mode-compile-kill "mode-compile"
   "Command to kill a compilation launched by `mode-compile'" t)
 (global-set-key "\C-ck" 'mode-compile-kill)
-
-;; Ruby block mode
-(require 'ruby-block)
-(ruby-block-mode t)
-;; display to minibuffer and do overlay
-(setq ruby-block-highlight-toggle t)
 
 ;;; FIX ME
 ;;Rspec mode
