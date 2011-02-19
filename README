@@ -44,7 +44,5 @@ WHAT NEXT?
 
 * Set up JavaScript lint checking with a Node.js server. Overkill? Yes. Absolutely awesome? You betcha!
 
-* Let RVM pick up the appropriate .el files when you switch Rubies. <- IN PROGRESS.
-
 * Work towards a solution for cleanly maintaining packages. The workflow can be as follows:
 The user points to a git repo which will added as a submodule, fetched and compiled. The compiled .elcs are stored out of git's purview. The user can also get packages via ELPA if so desired. el-get does most of what I want and I am looking forward to using it.

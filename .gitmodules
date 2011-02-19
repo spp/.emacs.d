@@ -6,7 +6,7 @@
 	url = https://github.com/emacsmirror/full-ack.git
 [submodule "packages/rvm"]
 	path = packages/rvm
-	url = git@github.com:habib/rvm.el.git
+	url = git@github.com:emacsmirror/rvm.git
 [submodule "packages/rhtml"]
 	path = packages/rhtml
 	url = https://github.com/eschulte/rhtml.git
