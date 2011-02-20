@@ -21,6 +21,12 @@
     (insert "{}")
     (backward-char 1)))
 
+(defun create-project-tags ()
+  "Create tags file."
+  (interactive)
+  (shell-command
+   (format "%s -f %s/TAGS -e -R %s" path-to-ctags (textmate-project-root) (directory-file-name (textmate-project-root)))))
+
 ;; Ruby mode settings
 (add-hook 'ruby-mode-hook
 	  (lambda()
@@ -30,14 +36,15 @@
 			   (untabify (point-min) (point-max))
 			   (delete-trailing-whitespace))))
 	    (set (make-local-variable 'indent-tabs-mode) 'nil)
+	    ;; Textmate mode
+	    (require 'textmate)
+	    (textmate-mode)
 	    (set (make-local-variable 'tab-width) 2)
 	    (imenu-add-to-menubar "IMENU")
 	    (setq ruby-deep-indent-paren nil)
 	    (setq c-tab-always-indent nil)
 	    (setq ruby-deep-arglist t)
 	    ;(require 'ruby-style)
-	    (require 'ruby-electric)
-	    (ruby-electric-mode t)
 	    ;; Ruby block mode
 	    (require 'ruby-block)
 	    (ruby-block-mode t)
@@ -45,7 +52,8 @@
 	    (setq ruby-block-highlight-toggle t)
 	    (require 'inf-ruby)
 	    (require 'ruby-compilation)
-	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)))
+	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)
+	    (create-project-tags)))
 
 ;; Install mode-compile to give friendlier compiling support!
 (require 'mode-compile)

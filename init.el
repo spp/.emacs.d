@@ -1,5 +1,6 @@
 ;; When started as a GUI app on Mac OS X, Emacs doesn't pick up environment variables
 (add-to-list 'exec-path (getenv "PATH"))
+
 ;; Mac Hack
 (push "/usr/local/bin" exec-path)
 
@@ -77,9 +78,9 @@
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
-;; Textmate mode
-(require 'textmate)
-(textmate-mode)
+;; Setup Ctags
+(setq path-to-ctags (executable-find "ctags"))
+(setq tags-revert-without-query 1)
 
 ;; Autopair mode
 (require 'autopair)
