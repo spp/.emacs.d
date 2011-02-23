@@ -36,9 +36,6 @@
 			   (untabify (point-min) (point-max))
 			   (delete-trailing-whitespace))))
 	    (set (make-local-variable 'indent-tabs-mode) 'nil)
-	    ;; Textmate mode
-	    (require 'textmate)
-	    (textmate-mode)
 	    (set (make-local-variable 'tab-width) 2)
 	    (imenu-add-to-menubar "IMENU")
 	    (setq ruby-deep-indent-paren nil)
@@ -53,7 +50,8 @@
 	    (require 'inf-ruby)
 	    (require 'ruby-compilation)
 	    (define-key ruby-mode-map "\C-m" 'newline-and-indent)
-	    (create-project-tags)))
+	    (unless (file-exists-p (concat (textmate-project-root) "/TAGS"))
+	      (create-project-tags))))
 
 ;; Install mode-compile to give friendlier compiling support!
 (require 'mode-compile)

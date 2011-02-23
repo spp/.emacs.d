@@ -124,6 +124,10 @@
 (auto-save-mode t)
 (global-auto-revert-mode t)
 
+;; Textmate mode
+(require 'textmate)
+(textmate-mode)
+
 ;; Android mode
 (require 'android-mode)
 
